@@ -1,0 +1,141 @@
+
+{{!-- Home Body --}}
+<div class="pl-4 home-wrapper">
+    {{!-- Slider --}}
+    <div class="home-banner">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-between" id="home-banner-1"
+                        style="background: linear-gradient(to right, rgb(118, 18, 255), rgb(5, 178, 255));">
+                        <div class="home-banner-text d-flex flex-column justify-content-center">
+                            <a href="/" class="home-banner-nav">Học HTML CSS cho người mới</a>
+                            <p class="mb-4">Thực hành dự án với Figma, hàng trăm bài tập và thử thách, hướng dẫn
+                                100% bởi Sơn Đặng, tặng kèm Flashcards, v.v.
+                            </p>
+                            <div>
+                                <a href="/" class="home-banner-btn">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                        <div><img class="d-block w-100"
+                                src="https://files.fullstack.edu.vn/f8-prod/banners/20/6308a6bf603a4.png"
+                                alt="First slide"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between" id="home-banner-2"
+                        style="background: linear-gradient(to right, rgb(254, 33, 94), rgb(255, 148, 2));;">
+                        <div class="home-banner-text d-flex flex-column justify-content-center">
+                            <a href="/" class="home-banner-nav">F8 trên Youtube</a>
+                            <p class="mb-4">F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm cho nghề IT và có
+                                những con người yêu thích lập trình F8 sẽ ở đó.
+                            </p>
+                            <div>
+                                <a href="/" class="home-banner-btn">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                        <div><img class="d-block w-100"
+                                src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_03_youtube.png"
+                                alt="First slide"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between" id="home-banner-3"
+                        style="background: linear-gradient(to right, rgb(0, 126, 254), rgb(6, 195, 254));">
+                        <div class="home-banner-text d-flex flex-column justify-content-center">
+                            <a href="/" class="home-banner-nav">F8 trên Facebook</a>
+                            <p class="mb-4">F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm cho nghề IT và có
+                                những con người yêu thích lập trình F8 sẽ ở đó.
+                            </p>
+                            <div>
+                                <a href="/" class="home-banner-btn">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                        <div><img class="d-block w-100"
+                                src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_04_2.png"
+                                alt="First slide"></div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-between" id="home-banner-4"
+                        style="background: linear-gradient(to right, rgb(40, 119, 250), rgb(103, 23, 205));">
+                        <div class="home-banner-text d-flex flex-column justify-content-center">
+                            <a href="/" class="home-banner-nav">Học ReactJS Miễn Phí!</a>
+                            <p class="mb-4">Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn
+                                có thể làm hầu hết các dự án thường gặp với
+                                ReactJS.
+                            </p>
+                            <div>
+                                <a href="/" class="home-banner-btn">Đăng ký ngay</a>
+                            </div>
+                        </div>
+                        <div><img class="d-block w-100"
+                                src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png"
+                                alt="First slide"></div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                {{!-- <span class="carousel-control-prev-icon text-dark" aria-hidden="true"></span> --}}
+                <i class="fa-solid fa-angle-left carousel-control-prev-icon text-dark"></i>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                {{!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> --}}
+                <i class="fa-solid fa-angle-right carousel-control-prev-icon text-dark"></i>
+            </a>
+        </div>
+    </div>
+    {{!-- Courses --}}
+    <div class="home-wrapper-1 home-pd-40 home-mt-70">
+        <h2 class="wrapper-header">Khóa học Pro</h2>
+        <div class="d-inline-flex flex-wrap home-course-margin">
+            {{#each courses}}
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-course-item">
+                    <a class="position-relative card-img-top-a" href="/courses/{{this.slug}}">
+                        <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+                    </a>
+                    <div class="card-body">
+                        <a href="/courses/{{this.slug}}">
+                            <h5 class="card-title">{{this.name}}</h5>
+                        </a>
+                        <div class="card-text">
+                            <i class="fa-solid fa-user-group mr-2"></i>
+                            <span>{{this.followed}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="home-wrapper-2 home-pd-40 home-mt-70">
+        <h2 class="wrapper-header">Khóa học Miễn phí</h2>
+        <div class="d-inline-flex flex-wrap home-course-margin">
+            {{#each courses}}
+            <div class="col-sm-6 col-lg-3">
+                <div class="card card-course-item">
+                    <a class="position-relative card-img-top-a" href="/courses/{{this.slug}}">
+                        <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+                    </a>
+                    <div class="card-body">
+                        <a href="/courses/{{this.slug}}">
+                            <h5 class="card-title">{{this.name}}</h5>
+                        </a>
+                        <div class="card-text">
+                            <i class="fa-solid fa-user-group mr-2"></i>
+                            <span>{{this.followed}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
